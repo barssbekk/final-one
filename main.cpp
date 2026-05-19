@@ -39,7 +39,10 @@ int main() {
                  << airportCodeHighest.second << '\n';
         }
     }
-    
 
     return 0;
+}
+
+void airportTrafficRange(int low, int high, map<string, int>& traffic) {
+    for 
 }
