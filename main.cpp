@@ -24,7 +24,16 @@ int main() {
     for (auto& each : airportTraffic) {
         cout << each.first << '\t' << each.second << '\n';
     }
-    
+
+    cout << "#########################\n";
+
+    int highest{0};
+    for (auto airportCode : airportTraffic) {
+        if (highest < airportCode.second)
+            highest = airportCode.second;
+    }
+    cout << "Highest: " << highest;
+
 
     return 0;
 }
