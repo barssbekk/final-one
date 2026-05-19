@@ -31,8 +31,8 @@ int main() {
             highest = airportCode.second;
         }
     }
-    cout << "Busiest airport(s) with count " << highest << ": \n";
-
+    
+    cout << "\nBusiest airport(s) with count " << highest << ": \n";
     for (auto& airportCodeHighest : airportTraffic) {
         if (airportCodeHighest.second == highest) {
             cout << airportCodeHighest.first << ' '
