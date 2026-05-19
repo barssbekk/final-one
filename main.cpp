@@ -11,6 +11,11 @@ int main() {
         cerr << "File not found\n";
 
     map<string, int> airportTraffic;
+    string initial{};
+    string final{};
+    while (fileInput >> initial >> final) {
+        airportTraffic[initial] =
+    }
 
     return 0;
 }
