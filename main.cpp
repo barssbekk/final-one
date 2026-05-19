@@ -24,6 +24,7 @@ int main() {
     for (auto& each : airportTraffic) {
         cout << each.first << '\t' << each.second << '\n';
     }
+    
 
     return 0;
 }
