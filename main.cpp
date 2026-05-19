@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void airportTrafficRange(int low, int high, map<string, int>& traffic);
+void airportTrafficRange(int low, int high, const map<string, int>& traffic);
 
 int main() {
     fstream fileInput{"data.txt"};
@@ -28,7 +28,7 @@ int main() {
     }
 
     int highest{0};
-    for (auto& airportCode : airportTraffic) {
+    for (const auto& airportCode : airportTraffic) {
         if (highest < airportCode.second) {
             highest = airportCode.second;
         }
@@ -43,18 +43,19 @@ int main() {
     }
 
     airportTrafficRange(5, 8, airportTraffic);
+    airportTrafficRange(9, 12, airportTraffic);
 
     return 0;
 }
 
-void airportTrafficRange(int low, int high, map<string, int>& traffic) {
-    cout << "Airports with traffic in range "
+void airportTrafficRange(const int low, const int high,
+                         const map<string, int>& traffic) {
+    cout << "\nAirports with traffic in range "
          << '[' << low  << ", " << high << "]\n";
     for (const auto& airport : traffic) {
         if (airport.second >= low && airport.second <= high) {
-            cout << airport.first << '\n';
-            cout << "TEST: " << airport.second << '\n';
+            cout << airport.first << " "
+                 << airport.second << '\n';
         }
     }
-
 }
