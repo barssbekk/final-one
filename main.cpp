@@ -10,7 +10,7 @@ void airportTrafficRange(int low, int high, const map<string, int>& traffic);
 int main() {
     fstream fileInput{"data.txt"};
     if (!fileInput) {
-        cerr << "File not found\n";
+        cerr << "File not found \n";
         return 1;
     }
 
