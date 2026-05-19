@@ -28,12 +28,14 @@ int main() {
     cout << "#########################\n";
 
     int highest{0};
+    string airportCodeHighest{};
     for (auto airportCode : airportTraffic) {
-        if (highest < airportCode.second)
+        if (highest < airportCode.second) {
             highest = airportCode.second;
+        }
     }
-    cout << "Highest: " << highest;
-
+    airportCodeHighest = airportTraffic[highest];
+    cout << "Busiest airport(s) with count " << highest << ": \n";
 
     return 0;
 }
