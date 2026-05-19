@@ -25,17 +25,20 @@ int main() {
         cout << each.first << '\t' << each.second << '\n';
     }
 
-    cout << "#########################\n";
-
     int highest{0};
-    string airportCodeHighest{};
-    for (auto airportCode : airportTraffic) {
+    for (auto& airportCode : airportTraffic) {
         if (highest < airportCode.second) {
             highest = airportCode.second;
         }
     }
-    airportCodeHighest = airportTraffic[highest];
     cout << "Busiest airport(s) with count " << highest << ": \n";
+
+    for (auto& airportCodeHighest : airportTraffic) {
+        if (airportCodeHighest.second == highest) {
+            cout << airportCodeHighest.first << ' '
+                 << airportCodeHighest.second << '\n';
+        }
+    }
 
     return 0;
 }
